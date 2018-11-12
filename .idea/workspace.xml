@@ -52,16 +52,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="76">
-              <caret line="4" column="5" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="5" />
+            <state relative-caret-position="190">
+              <caret line="10" column="5" lean-forward="true" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
+              <folding>
+                <element signature="e#14#84#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ch5/toposort/toposort.go">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="361">
@@ -132,26 +135,6 @@
               <item name="the-go-programming-language-exercise" type="b2602c69:ProjectViewProjectNode" />
               <item name="the-go-programming-language-exercise" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="the-go-programming-language-exercise" type="b2602c69:ProjectViewProjectNode" />
-              <item name="the-go-programming-language-exercise" type="462c0819:PsiDirectoryNode" />
-              <item name="ch2" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="the-go-programming-language-exercise" type="b2602c69:ProjectViewProjectNode" />
-              <item name="the-go-programming-language-exercise" type="462c0819:PsiDirectoryNode" />
-              <item name="ch3" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="the-go-programming-language-exercise" type="b2602c69:ProjectViewProjectNode" />
-              <item name="the-go-programming-language-exercise" type="462c0819:PsiDirectoryNode" />
-              <item name="ch4" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="the-go-programming-language-exercise" type="b2602c69:ProjectViewProjectNode" />
-              <item name="the-go-programming-language-exercise" type="462c0819:PsiDirectoryNode" />
-              <item name="ch5" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -210,6 +193,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49910232" visible="true" weight="0.18311875" />
       <window_info id="Structure" order="1" sideWeight="0.50089765" side_tool="true" weight="0.26037195" />
@@ -345,17 +329,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="4" column="5" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ch5/toposort/toposort.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="361">
           <caret line="19" column="1" lean-forward="true" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="10" column="5" lean-forward="true" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
+          <folding>
+            <element signature="e#14#84#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
