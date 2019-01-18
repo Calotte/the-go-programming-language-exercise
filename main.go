@@ -6,7 +6,7 @@ import (
 )
 
 func main() {
-	for i, course := range toposort.TopoSort(toposort.Prereqs) {//
+	for i, course := range toposort.TopoSort(toposort.Prereqs) {//aa
 		fmt.Printf("%d:\t%s\n", i, course)//comment
 	}
 }
