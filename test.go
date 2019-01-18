@@ -7,6 +7,6 @@ import (
 
 func main() {
 	for i, course := range toposort.TopoSort(toposort.Prereqs) {//
-		fmt.Printf("%d:\t%s\n", i, course)//
+		fmt.Printf("%d:\t%s\n", i, course)//comment
 	}
 }
