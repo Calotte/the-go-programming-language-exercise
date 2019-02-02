@@ -1,17 +1,25 @@
 package main
 
 import (
+	"code.byted.org/gopkg/pkg/log"
 	"fmt"
-	"the-go-programming-language-exercise/ch5/toposort"
+	"net/http"
+	"os"
 )
 
+const port  =  "8000"
+
+func sayHi(w http.ResponseWriter,r *http.Request){
+
+	hostName,_:=os.Hostname()
+	fmt.Fprintf(w,"Hi,host name: %s",hostName)
+}
+
 func main() {
-<<<<<<< HEAD
-	for i, course := range toposort.TopoSort(toposort.Prereqs) {//aa
-		fmt.Printf("%d:\t%s\n", i, course)//comment
-=======
-	for i, course := range toposort.TopoSort(toposort.Prereqs) {//
-		fmt.Printf("%d:\t%s\n", i, course)
->>>>>>> f71d1053ce3b8b6ea3798ada828442699a3e0908
-	}
+	http.HandleFunc("/hi",sayHi)
+
+	fmt.Println("running on port: "+port)
+
+	log.Fatal(http.ListenAndServe(":"+port,nil))
+
 }
