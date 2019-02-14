@@ -2,11 +2,23 @@ package main
 
 import (
 	"fmt"
-	"the-go-programming-language-exercise/ch5/toposort"
+	"sync"
+	"time"
 )
+var wg sync.WaitGroup
 
 func main() {
-	for i, course := range toposort.TopoSort(toposort.Prereqs) {
-		fmt.Printf("%d:\t%s\n", i, course)
-	}
+	c:=make(chan int)
+	var a string
+	wg.Add(1)
+	go func() {
+		defer wg.Done()
+		a="hello world"
+		<-c
+		fmt.Println("hello go func")
+		time.Sleep(2*time.Second)
+	}()
+	c<-0
+	fmt.Println(a)
+	wg.Wait()
 }
