@@ -1,8 +1,7 @@
-package main
+package bytecounter
 
 import (
 	"bufio"
-	"fmt"
 	"strings"
 )
 
@@ -37,14 +36,4 @@ func (l *LineCounter) Write(p []byte) (int, error) {
 	count, err := counter(s, bufio.ScanLines)
 	*l += LineCounter(count)
 	return count, err
-}
-
-func main() {
-	var w LineCounter
-	s := "a\nb\nworld"
-	_, err := fmt.Fprintf(&w, "hello %s", s)
-	if err != nil {
-		fmt.Println(err)
-	}
-	fmt.Println(w)
 }
