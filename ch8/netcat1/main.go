@@ -12,14 +12,22 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	if tcpConn, ok := conn.(*net.TCPConn); ok {
+		conn = tcpConn
+	}
 	done := make(chan struct{})
 	go func() {
-		io.Copy(os.Stdout, conn)
+		_, _ = io.Copy(os.Stdout, conn)
 		log.Println("done")
 		done <- struct{}{}
 	}()
 	mustCopy(conn, os.Stdin)
-	conn.Close()
+	if tcpConn, ok := conn.(*net.TCPConn); ok {
+		_ = tcpConn.CloseWrite()
+	} else {
+		log.Println("convert failed")
+		_ = conn.Close()
+	}
 	<-done
 }
 
