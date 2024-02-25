@@ -1,10 +1,12 @@
 package main
 
 import (
+	"fmt"
 	"io"
 	"log"
 	"net"
 	"os"
+	"strings"
 )
 
 func main() {
@@ -12,18 +14,23 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	if tcpConn, ok := conn.(*net.TCPConn); ok {
-		conn = tcpConn
-	}
+
 	done := make(chan struct{})
 	go func() {
 		_, _ = io.Copy(os.Stdout, conn)
+		if tcpConn, ok := conn.(*net.TCPConn); ok {
+			_ = tcpConn.CloseRead()
+			fmt.Println("Read conn closed")
+		}
 		log.Println("done")
 		done <- struct{}{}
 	}()
-	mustCopy(conn, os.Stdin)
+	str := "Hello\n"
+	r := strings.NewReader(str)
+	mustCopy(conn, r)
 	if tcpConn, ok := conn.(*net.TCPConn); ok {
 		_ = tcpConn.CloseWrite()
+		fmt.Println("Write conn closed")
 	} else {
 		log.Println("convert failed")
 		_ = conn.Close()
@@ -32,7 +39,10 @@ func main() {
 }
 
 func mustCopy(dst io.Writer, src io.Reader) {
-	if _, err := io.Copy(dst, src); err != nil {
-		log.Fatal(err)
+	n, err := io.Copy(dst, src)
+	if err != nil {
+		fmt.Println(err)
+		return
 	}
+	fmt.Printf("copy %d data\n", n)
 }
